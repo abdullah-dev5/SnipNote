@@ -1,0 +1,29 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "lib": [
+      "ES2023"
+    ],
+    "module": "ESNext",
+    "skipLibCheck": true,
+    "moduleResolution": "node",
+    "allowImportingTsExtensions": true,
+    "noEmit": true,
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+    "types": [
+      "node"
+    ] // This line specifies to include Node.js type definitions
+  },
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx", // Include TypeScript React files if needed
+    "server/**/*.ts" // Include your server-related files
+  ],
+  "exclude": [
+    "node_modules",
+    "**/*.spec.ts" // Exclude test files if applicable
+  ]
+}
