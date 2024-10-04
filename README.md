@@ -55,7 +55,7 @@ snipnote/
 ├── src/
 │   ├── components/
 │   │   ├── Popup.tsx
-│   │   
+│   │   └── ...
 │   ├── background.ts
 │   ├── index.tsx
 │   ├── popup.html
