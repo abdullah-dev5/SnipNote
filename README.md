@@ -25,9 +25,10 @@ SnipNote is a Chrome extension that allows users to save links and notes while b
 2. Install the dependencies:
 
 pnpm install
-Build the project:
 
-3. pnpm build
+3. Build the project:
+
+ pnpm build
 
 ### Load the Extension in Chrome
 
