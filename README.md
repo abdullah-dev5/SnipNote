@@ -45,23 +45,8 @@ Build the project:
 
 ## Project Structure
 
-snipnote/
-├── public/
-│   ├── icons/
-│   │   ├── icon-16.png
-│   │   ├── icon-48.png
-│   │   └── icon-128.png
-│   └── manifest.json
-├── src/
-│   ├── components/
-│   │   ├── Popup.tsx
-│   │   └── ...
-│   ├── background.ts
-│   ├── index.tsx
-│   ├── popup.html
-│   └── styles.css
-├── tsconfig.json
-└── README.md
+![image](https://github.com/user-attachments/assets/e8ea2338-4b59-461c-9131-ed67a3ca5ee3)
+
 
 ## Contributing
 Feel free to open issues and submit pull requests for improvements or bug fixes.
