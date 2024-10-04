@@ -48,6 +48,10 @@ Build the project:
 ![image](https://github.com/user-attachments/assets/e8ea2338-4b59-461c-9131-ed67a3ca5ee3)
 
 
+
+## Dist directory Structure
+![image](https://github.com/user-attachments/assets/edafdc14-d649-4c81-be0b-5b8e08b4121c)
+
 ## Contributing
 Feel free to open issues and submit pull requests for improvements or bug fixes.
 
