@@ -80,7 +80,7 @@ const Popup: React.FC = () => {
   };
 
   return (
-    <div className="p-6 max-w-md mx-auto bg-gray-800 text-white rounded-lg shadow-md space-y-4">
+    <div className="p-6 max-w-sm mx-auto bg-gray-800 text-white rounded-lg shadow-md space-y-4">
       <input
         type="text"
         placeholder="Enter link"
@@ -92,7 +92,7 @@ const Popup: React.FC = () => {
         placeholder="Enter note"
         value={note}
         onChange={(e) => setNote(e.target.value)}
-        className="w-full p-2 bg-gray-700 rounded-md text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+        className="w-full p-2 bg-gray-700 rounded-md text-white focus:outline-none focus:ring-2 focus:ring-blue-500 break-words whitespace-pre-wrap"
       />
       
       <div className="flex space-x-2">
@@ -110,15 +110,15 @@ const Popup: React.FC = () => {
         </button>
       </div>
 
-      <div className="space-y-2">
+      <div className="space-y-2 scrollable max-h-64">
         {savedNotes.map((item, index) => (
           <div key={index} className="p-3 bg-gray-700 rounded-md relative hover:bg-gray-600 transition duration-150 ease-in-out">
             <button
               onClick={() => handleDeleteNote(index)}
-              className="absolute top-1 right-1 text-red-300 hover:text-red-400 focus:outline-none"
+              className="absolute top-1 right-1 w-6 h-6 flex items-center justify-center bg-transparent rounded-full hover:bg-gray-600 focus:outline-none"
               aria-label="Delete note"
             >
-              <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" className="w-5 h-5" viewBox="0 0 24 24">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" className="w-4 h-4 text-red-300 hover:text-red-400" viewBox="0 0 24 24">
                 <path d="M6 19c0 1.104.896 2 2 2h8c1.104 0 2-.896 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z" />
               </svg>
             </button>
@@ -127,11 +127,11 @@ const Popup: React.FC = () => {
                 href={item.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-blue-400 hover:text-blue-300"
+                className="text-blue-400 hover:text-blue-300 break-words whitespace-pre-wrap"
               >
                 {item.link}
               </a>
-              <p className="text-gray-300">{item.note}</p>
+              <p className="text-gray-300 break-words whitespace-pre-wrap">{item.note}</p>
             </div>
           </div>
         ))}
