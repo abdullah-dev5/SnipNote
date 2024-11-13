@@ -20,7 +20,7 @@ SnipNote is a Chrome extension that allows users to save links and notes while b
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/snipnote.git
+   git clone https://github.com/abdullah-dev5/snipnote.git
    cd snipnote
 2. Install the dependencies:
 
@@ -62,4 +62,4 @@ This project is licensed under the MIT License. See the LICENSE file for more in
 ## Acknowledgements
 This extension is built using React, TypeScript, and Vite for a fast development experience.
 
-Feel free to replace `https://github.com/yourusername/snipnote.git` with your actual repository URL and update any sections as needed!
+
