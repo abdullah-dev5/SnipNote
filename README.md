@@ -36,7 +36,18 @@ Enable or disable each module independently:
 
 Apply presets in **Settings → Quick presets**, or click **⚡ Minimal** in the popup header for one-click lightweight mode.
 
-## Install & build
+## Quick install (no build required)
+
+Use the pre-built **`dist.zip`** in the repo root — extract and load it in Chrome:
+
+1. Download or extract `dist.zip` (you will get a `dist` folder)
+2. Open `chrome://extensions`
+3. Enable **Developer mode**
+4. Click **Load unpacked** and select the extracted `dist` folder
+
+No Node.js or build step needed.
+
+## Install from source
 
 ```bash
 git clone https://github.com/abdullah-dev5/SnipNote.git
@@ -45,7 +56,9 @@ npm install
 npm run build
 ```
 
-Load `dist` folder in `chrome://extensions` → **Load unpacked**.
+Load the `dist` folder in `chrome://extensions` → **Load unpacked**.
+
+To refresh `dist.zip` after changes, run `npm run build` then re-zip the `dist` folder.
 
 ## Usage
 
@@ -63,7 +76,8 @@ src/
 ├── utils/        storage, export, filter, crypto
 ├── background.ts service worker (menus, shortcuts, alarms)
 ├── popup.html / manager.html / options.html
-dist/             Load this in Chrome
+dist/             Load this in Chrome (or use dist.zip)
+dist.zip          Pre-built extension — extract and load dist/
 ```
 
 ## License
