@@ -11,6 +11,10 @@ node_modules
 dist
 dist-ssr
 *.local
+*.tsbuildinfo
+
+# Compiled JS emitted beside TS sources (build output goes to dist/)
+src/**/*.js
 
 # Editor directories and files
 .vscode/*

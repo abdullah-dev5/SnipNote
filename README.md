@@ -1,65 +1,85 @@
 # SnipNote Chrome Extension
 
-SnipNote is a Chrome extension that allows users to save links and notes while browsing. It provides a simple interface for adding notes and links, downloading them as a text file, and clearing stored notes.
+SnipNote is a **modular** Chrome extension for saving links, page titles, and notes. Use the popup for quick capture, the **Manager** for power features, and **Settings** to enable only what you need — keeping it fast and lightweight.
 
-## Features
+## Core (always available)
 
-- Save links and notes
-- Download saved notes as a `.txt` file
-- Clear all stored notes
-- User-friendly interface with styled components
+- Quick capture popup with auto-fill from current tab
+- Search, tags, pin, star, archive, edit, delete
+- Export TXT / JSON / Markdown
+- Context menu: save page
+- Keyboard shortcuts: `Alt+Shift+S` (quick save), `Alt+Shift+M` (manager)
+- Onboarding tour for new users
 
-## Getting Started
+## Optional features (toggle in Settings)
 
-### Prerequisites
+Enable or disable each module independently:
 
-- Node.js and npm installed on your machine
-- A modern web browser (Google Chrome recommended)
+| Category | Features |
+|----------|----------|
+| **Capture** | Text selection save, screenshots, duplicate URL warning, title refresh |
+| **Organization** | Folders, color labels, archive, starred, templates, drag reorder |
+| **Discovery** | Domain filter, search highlight, favicon previews |
+| **Export** | Markdown copy/export, bulk import, multi-select, print view, open all links |
+| **Experience** | Markdown preview, undo delete, keyboard nav, statistics, reminders |
+| **Data (heavier)** | Chrome sync (no screenshots), scheduled backup, note encryption |
 
-### Installation
+> **Performance tip:** Keep screenshot, sync, and encryption off unless you need them.
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/abdullah-dev5/snipnote.git
-   cd snipnote
-2. Install the dependencies:
+## Quick presets
 
-pnpm install
+| Preset | What it does |
+|--------|----------------|
+| **Minimal** | Popup-first: save, search, pin & archive only — fastest |
+| **Balanced** | Default — most features on, heavy data tools off |
+| **Full** | Everything on including screenshots, sync, backup & encryption |
 
-3. Build the project:
+Apply presets in **Settings → Quick presets**, or click **⚡ Minimal** in the popup header for one-click lightweight mode.
 
- pnpm build
+## Quick install (no build required)
 
-### Load the Extension in Chrome
+Use the pre-built **`dist.zip`** in the repo root — extract and load it in Chrome:
 
-1. Open Chrome and go to chrome://extensions.
-2. Enable "Developer mode" in the top right corner.
-3. Click on "Load unpacked" and select the dist folder of your project.
-4. The SnipNote extension should now appear in your extensions list.
-### Usage
-  Click on the SnipNote icon in the Chrome toolbar to open the popup.
-  Enter a link and note in the provided input fields.
-  Click "Save Note" to store the link and note.
-  Click "Download Notes as TXT" to download all saved notes as a text file.
-  Click "Clear All Notes" to remove all saved notes.
+1. Download or extract `dist.zip` (you will get a `dist` folder)
+2. Open `chrome://extensions`
+3. Enable **Developer mode**
+4. Click **Load unpacked** and select the extracted `dist` folder
 
+No Node.js or build step needed.
 
-## Project Structure
+## Install from source
 
-![image](https://github.com/user-attachments/assets/e8ea2338-4b59-461c-9131-ed67a3ca5ee3)
+```bash
+git clone https://github.com/abdullah-dev5/SnipNote.git
+cd SnipNote
+npm install
+npm run build
+```
 
+Load the `dist` folder in `chrome://extensions` → **Load unpacked**.
 
+To refresh `dist.zip` after changes, run `npm run build` then re-zip the `dist` folder.
 
-## Dist directory Structure
-![image](https://github.com/user-attachments/assets/edafdc14-d649-4c81-be0b-5b8e08b4121c)
+## Usage
 
-## Contributing
-Feel free to open issues and submit pull requests for improvements or bug fixes.
+1. **Popup** — Click toolbar icon for quick save & recent notes (shows up to 25; open Manager for full list)
+2. **Manager** — Click "Manager" in popup or `Alt+Shift+M` for bulk actions, stats, import, drag reorder
+3. **Settings** — Click ⚙ or extension options to toggle features, theme, density, sync, backup
 
- ### License
-This project is licensed under the MIT License. See the LICENSE file for more information.
+## Project structure
 
-## Acknowledgements
-This extension is built using React, TypeScript, and Vite for a fast development experience.
+```
+src/
+├── components/   Popup, Manager, Options, NoteCard, etc.
+├── hooks/        useAppData, useTheme
+├── types/        notes, settings, feature flags
+├── utils/        storage, export, filter, crypto
+├── background.ts service worker (menus, shortcuts, alarms)
+├── popup.html / manager.html / options.html
+dist/             Load this in Chrome (or use dist.zip)
+dist.zip          Pre-built extension — extract and load dist/
+```
 
+## License
 
+MIT
